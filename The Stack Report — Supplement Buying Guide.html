@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>The Stack Report — Supplement Buying Guide</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --base: #FAF9F4;
+    --base-raised: #F2EFE6;
+    --ink: #20291F;
+    --ink-soft: #58614F;
+    --primary: #2F5233;
+    --primary-deep: #203A24;
+    --accent: #C08552;
+    --accent-deep: #9C6A3D;
+    --line: #DCD6C6;
+    --white: #FFFFFF;
+    --star: #C08552;
+    box-sizing: border-box;
+    padding-top: env(safe-area-inset-top, 0px);
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --base: #171D15;
+      --base-raised: #1F2620;
+      --ink: #EDEAE0;
+      --ink-soft: #A7AF9C;
+      --primary: #7FA787;
+      --primary-deep: #9FC0A5;
+      --accent: #D9A472;
+      --accent-deep: #E5BA92;
+      --line: #333B2E;
+      --white: #232B20;
+    }
+  }
+  :root[data-theme="dark"] {
+    --base: #171D15;
+    --base-raised: #1F2620;
+    --ink: #EDEAE0;
+    --ink-soft: #A7AF9C;
+    --primary: #7FA787;
+    --primary-deep: #9FC0A5;
+    --accent: #D9A472;
+    --accent-deep: #E5BA92;
+    --line: #333B2E;
+    --white: #232B20;
+  }
+  html { scroll-padding-top: env(safe-area-inset-top, 0px); height: 100%; }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--base);
+    color: var(--ink);
+    font-family: 'IBM Plex Sans', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    line-height: 1.5;
+  }
+  a { color: inherit; }
+  img { max-width: 100%; }
+
+  .wrap { max-width: 1080px; margin: 0 auto; padding: 0 28px; }
+  .overflow-scroll { overflow-x: auto; }
+
+  h1, h2, h3, .serif { font-family: 'Newsreader', serif; font-weight: 500; letter-spacing: -0.01em; }
+
+  /* ---------- Header ---------- */
+  header {
+    position: sticky; top: 0; z-index: 20;
+    padding-top: env(safe-area-inset-top, 0px);
+    background: color-mix(in srgb, var(--base) 92%, transparent);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--line);
+  }
+  .nav {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 18px 0;
+  }
+  .brand {
+    display: flex; align-items: baseline; gap: 8px;
+    font-family: 'Newsreader', serif; font-weight: 600; font-size: 1.28rem;
+    text-decoration: none; color: var(--ink);
+  }
+  .brand .mark {
+    width: 10px; height: 10px; border-radius: 50%;
+    background: var(--accent); display: inline-block; transform: translateY(-2px);
+  }
+  .navlinks { display: flex; gap: 28px; font-size: 0.92rem; }
+  .navlinks a { text-decoration: none; color: var(--ink-soft); }
+  .navlinks a:hover { color: var(--ink); }
+  .navlinks { display: none; }
+  @media (min-width: 720px) { .navlinks { display: flex; } }
+
+  /* ---------- Hero ---------- */
+  .hero { padding: 64px 0 48px; border-bottom: 1px solid var(--line); }
+  .hero-grid {
+    display: grid; grid-template-columns: 1fr; gap: 32px; align-items: end;
+  }
+  @media (min-width: 800px) { .hero-grid { grid-template-columns: 1.3fr 1fr; } }
+  .eyebrow {
+    font-size: 0.82rem; color: var(--ink-soft); margin: 0 0 14px;
+  }
+  h1.headline {
+    font-size: clamp(2.1rem, 5vw, 3.3rem);
+    line-height: 1.06; margin: 0 0 18px; max-width: 14ch;
+  }
+  h1.headline em { font-style: italic; color: var(--primary); }
+  .lede {
+    font-size: 1.05rem; color: var(--ink-soft); max-width: 46ch; margin: 0;
+  }
+  .hero-side {
+    border-left: 1px solid var(--line); padding-left: 24px;
+    font-size: 0.92rem; color: var(--ink-soft);
+  }
+  .hero-side p { margin: 0 0 12px; }
+  .hero-side strong { color: var(--ink); font-weight: 600; }
+
+  /* ---------- Category strip ---------- */
+  .catstrip {
+    display: flex; gap: 10px; padding: 20px 0; overflow-x: auto;
+    border-bottom: 1px solid var(--line);
+  }
+  .catstrip a {
+    flex: none; padding: 8px 16px; border: 1px solid var(--line); border-radius: 999px;
+    text-decoration: none; font-size: 0.86rem; color: var(--ink-soft); white-space: nowrap;
+  }
+  .catstrip a:hover { border-color: var(--primary); color: var(--primary); }
+
+  /* ---------- Section heading ---------- */
+  .section { padding: 56px 0; border-bottom: 1px solid var(--line); }
+  .section-head {
+    display: flex; justify-content: space-between; align-items: baseline; gap: 16px;
+    margin-bottom: 28px; flex-wrap: wrap;
+  }
+  .section-head h2 { font-size: 1.7rem; margin: 0; }
+  .section-num { font-size: 0.82rem; color: var(--ink-soft); font-family: 'IBM Plex Mono', monospace; }
+  .section-desc { color: var(--ink-soft); max-width: 60ch; margin: -14px 0 28px; font-size: 0.96rem; }
+
+  /* ---------- Product row (editorial, not card-kit) ---------- */
+  .pick {
+    display: grid; grid-template-columns: 44px 1fr; gap: 20px;
+    padding: 26px 0; border-top: 1px solid var(--line);
+  }
+  .pick:first-of-type { border-top: none; }
+  .pick-rank {
+    font-family: 'Newsreader', serif; font-style: italic; font-size: 1.6rem; color: var(--primary);
+  }
+  .pick-body { display: grid; grid-template-columns: 1fr; gap: 16px; }
+  @media (min-width: 700px) { .pick-body { grid-template-columns: 1fr 200px; align-items: start; } }
+  .pick-name { font-size: 1.2rem; margin: 0 0 4px; }
+  .pick-meta { display: flex; gap: 14px; align-items: center; margin: 0 0 10px; flex-wrap: wrap; }
+  .stars { color: var(--star); letter-spacing: 1px; font-size: 0.95rem; }
+  .price { font-family: 'IBM Plex Mono', monospace; font-size: 0.88rem; color: var(--ink-soft); }
+  .best-for { font-size: 0.82rem; color: var(--ink-soft); border-left: 2px solid var(--accent); padding-left: 8px; }
+  .pick-desc { color: var(--ink-soft); font-size: 0.95rem; max-width: 58ch; margin: 0; }
+  .cta-col { display: flex; flex-direction: column; gap: 8px; align-items: flex-start; }
+  .btn {
+    display: inline-block; padding: 11px 20px; background: var(--primary); color: var(--white);
+    text-decoration: none; font-size: 0.9rem; font-weight: 500; border-radius: 3px;
+    border: 1px solid var(--primary);
+  }
+  .btn:hover { background: var(--primary-deep); border-color: var(--primary-deep); }
+  .btn-note { font-size: 0.76rem; color: var(--ink-soft); }
+
+  /* ---------- Guide / FAQ ---------- */
+  .guide-grid { display: grid; grid-template-columns: 1fr; gap: 28px; }
+  @media (min-width: 760px) { .guide-grid { grid-template-columns: 1fr 1fr; } }
+  .qa dt { font-family: 'Newsreader', serif; font-size: 1.08rem; margin: 0 0 6px; }
+  .qa dd { margin: 0 0 22px; color: var(--ink-soft); font-size: 0.94rem; max-width: 52ch; }
+
+  /* ---------- Disclosure ---------- */
+  .disclosure {
+    background: var(--base-raised); border: 1px solid var(--line); border-radius: 4px;
+    padding: 18px 20px; font-size: 0.86rem; color: var(--ink-soft); margin-top: 8px;
+  }
+  .disclosure strong { color: var(--ink); }
+
+  footer { padding: 40px 0 calc(40px + env(safe-area-inset-bottom, 0px)); }
+  .foot-grid { display: flex; justify-content: space-between; gap: 20px; flex-wrap: wrap; align-items: flex-start; }
+  .foot-brand { font-family: 'Newsreader', serif; font-size: 1.1rem; }
+  .foot-links { display: flex; gap: 18px; font-size: 0.86rem; color: var(--ink-soft); flex-wrap: wrap; }
+  .foot-links a { text-decoration: none; }
+  .foot-copy { font-size: 0.8rem; color: var(--ink-soft); margin-top: 24px; }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="#top"><span class="mark"></span>The Stack Report</a>
+    <nav class="navlinks">
+      <a href="#protein">Protein</a>
+      <a href="#creatine">Creatine</a>
+      <a href="#omega3">Omega-3</a>
+      <a href="#vitamins">Vitamins</a>
+      <a href="#guide">Buying guide</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <p class="eyebrow">Independent supplement reviews · Updated for 2026</p>
+        <h1 class="headline">What's actually worth <em>taking</em>, and what isn't.</h1>
+        <p class="lede">We test labels, not marketing copy — checking third-party purity testing, dose-per-serving, and price-per-gram across protein, creatine, omega-3, and multivitamins, so you don't have to read forty label backs.</p>
+      </div>
+      <div class="hero-side">
+        <p><strong>How we pick.</strong> Every product on this list is cross-checked against NSF or Informed Sport testing where available, and ranked by cost per effective dose, not by brand recognition.</p>
+        <p><strong>Full transparency.</strong> This site earns a commission on qualifying purchases made through our links, at no extra cost to you.</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="wrap catstrip overflow-scroll">
+    <a href="#protein">Protein powder</a>
+    <a href="#creatine">Creatine</a>
+    <a href="#omega3">Omega-3</a>
+    <a href="#vitamins">Multivitamins</a>
+    <a href="#guide">Dosing guide</a>
+    <a href="#faq">FAQ</a>
+  </div>
+
+  <section class="section" id="protein">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>Protein powder</h2>
+        <span class="section-num">01 / 04</span>
+      </div>
+      <p class="section-desc">Ranked on protein per scoop, mixability, and price per 25g serving — whey and plant-based included.</p>
+
+      <div class="pick">
+        <span class="pick-rank">1</span>
+        <div class="pick-body">
+          <div>
+            <h3 class="pick-name">Optimum Nutrition Gold Standard 100% Whey</h3>
+            <p class="pick-meta"><span class="stars">★★★★★</span><span class="price">$0.85 / serving</span></p>
+            <p class="best-for">Best for: everyday recovery, budget-conscious buyers</p>
+            <p class="pick-desc">24g protein per scoop with a mixability record that's held up for over a decade. The vanilla and chocolate lines are the least likely to disappoint straight out of the tub.</p>
+          </div>
+          <div class="cta-col">
+            <a class="btn" href="https://www.amazon.com/dp/B000QSNYGI?th=1&linkCode=ll2&tag=radiospy-20&linkId=351e51f78078215328353ecd8e20c855&language=en_US&gaOptInStatus=true&ref_=as_li_ss_tl" target="_blank" rel="noopener sponsored">View on Amazon</a>
+            <span class="btn-note">Amazon Associates link</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="pick">
+        <span class="pick-rank">2</span>
+        <div class="pick-body">
+          <div>
+            <h3 class="pick-name">Naked Whey Protein</h3>
+            <p class="pick-meta"><span class="stars">★★★★☆</span><span class="price">$1.35 / serving</span></p>
+            <p class="best-for">Best for: minimal-ingredient preference</p>
+            <p class="pick-desc">One ingredient: whey from grass-fed cows. No lecithin, no artificial sweetener — the trade-off is a thinner mix and a higher price per gram.</p>
+          </div>
+          <div class="cta-col">
+            <a class="btn" href="https://www.amazon.com/dp/B00PWSC64G?tag=radiospy-20" target="_blank" rel="noopener sponsored">View on Amazon</a>
+            <span class="btn-note">Amazon Associates link</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="pick">
+        <span class="pick-rank">3</span>
+        <div class="pick-body">
+          <div>
+            <h3 class="pick-name">Orgain Organic Plant Protein</h3>
+            <p class="pick-meta"><span class="stars">★★★★☆</span><span class="price">$0.95 / serving</span></p>
+            <p class="best-for">Best for: dairy-free / vegan</p>
+            <p class="pick-desc">Pea and brown rice blend hitting a full amino acid profile at 21g protein per scoop. Grittier texture than whey, best blended rather than shaken.</p>
+          </div>
+          <div class="cta-col">
+            <a class="btn" href="https://www.amazon.com/Orgain-Prote%C3%ADna-org%C3%A1nica-vegetales-carbohidratos/dp/B00J074W7Q?__mk_es_US=%C3%85M%C3%85%C5%BD%C3%95%C3%91&crid=I9GPD9JKBESN&dib=eyJ2IjoiMSJ9.ZGzE0WePGJQ9fa7mKF8ZYj_PZ__oNZm9DzOPxkFRUzP83AkQTFcSWeMRZUSl_D-by--f1ecvJZHoOiHH_Gbu9I7nyLkt1aFG9AQXQf5Qzswmpi59ElYKprrSSnq1jzydy76vFr5OlTSR3hfhn42dWQk9WMI-91iXmrl0Cy4eKxtNJcZzaXPzx0kIi0sE7RM3zxkHxX-itu1s5-0BR4thnfQKJQDUfSMfH7ShqRmJkNCcQ94oyICTv2Gojr9BWFPwjQUiBrUStvi7vDQNHuhCwGvvMBAcdrdmSAySWf_TYVo.dujZRjIXK0LeysxpMqsDSMmzebEf2HqLXPan21fZBY8&dib_tag=se&keywords=Orgain%2BOrganic%2BPlant%2BProtein&qid=1790514923&sprefix=orgain%2Borganic%2Bplant%2Bprotein%2Caps%2C291&sr=8-1-spons&sp_csd=d2lkZ2V0TmFtZT1zcF9hdGY&th=1&linkCode=ll2&tag=radiospy-20&linkId=39e7423e10075466e533e42417ef4d99&language=es_US&gaOptInStatus=true&ref_=as_li_ss_tl" target="_blank" rel="noopener sponsored">View on Amazon</a>
+            <span class="btn-note">Amazon Associates link</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="creatine">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>Creatine</h2>
+        <span class="section-num">02 / 04</span>
+      </div>
+      <p class="section-desc">Creatine monohydrate is one of the most studied supplements available — the differences between brands come down to purity testing and micronization, not the molecule itself.</p>
+
+      <div class="pick">
+        <span class="pick-rank">1</span>
+        <div class="pick-body">
+          <div>
+            <h3 class="pick-name">Naked Creatine Monohydrate</h3>
+            <p class="pick-meta"><span class="stars">★★★★★</span><span class="price">$0.20 / 5g serving</span></p>
+            <p class="best-for">Best for: first-time buyers</p>
+            <p class="pick-desc">Micronized, third-party tested, unflavored — dissolves cleanly into whatever you're already drinking. Nothing to overthink here.</p>
+          </div>
+          <div class="cta-col">
+            <a class="btn" href="https://www.amazon.com/Ekkovision-monohidrato-micronizado-suplemento-entrenamiento/dp/B0DQF91DDF?__mk_es_US=%C3%85M%C3%85%C5%BD%C3%95%C3%91&content-id=amzn1.sym.4e6e4604-30c2-4a55-84df-0e41b8f895e4%3Aamzn1.sym.4e6e4604-30c2-4a55-84df-0e41b8f895e4&crid=2FFREQ6GGZGH8&cv_ct_cx=Naked%2BCreatine%2BMonohydrate&keywords=Naked%2BCreatine%2BMonohydrate&pd_rd_i=B0DQF91DDF&pd_rd_r=7f168fcd-61ae-4f70-9f00-e6f6fe3da448&pd_rd_w=3RrNz&pd_rd_wg=d1icM&pf_rd_p=4e6e4604-30c2-4a55-84df-0e41b8f895e4&pf_rd_r=C6WSXFPP4MEAR0T1GM5R&qid=1790515303&rdc=1&sbo=RZvfv%2F%2FHxDF%2BO5021pAnSA%3D%3D&sprefix=naked%2Bcreatine%2Bmonohydrate%2Caps%2C592&sr=1-3-6024b2a3-78e4-4fed-8fed-e1613be3bcce-spons&aref=7m1sviZWIC&sp_csd=d2lkZ2V0TmFtZT1zcF9zZWFyY2hfdGhlbWF0aWM&th=1&linkCode=ll2&tag=radiospy-20&linkId=b0ebe8d987370cb48d1313d1f38ec71f&language=es_US&gaOptInStatus=true&ref_=as_li_ss_tl" target="_blank" rel="noopener sponsored">View on Amazon</a>
+            <span class="btn-note">Amazon Associates link</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="pick">
+        <span class="pick-rank">2</span>
+        <div class="pick-body">
+          <div>
+            <h3 class="pick-name">Thorne Creatine</h3>
+            <p class="pick-meta"><span class="stars">★★★★★</span><span class="price">$0.55 / 5g serving</span></p>
+            <p class="best-for">Best for: NSF Certified for Sport requirement</p>
+            <p class="pick-desc">The pick if you're tested for banned substances — carries NSF Certified for Sport, at roughly double the per-serving cost of unbranded monohydrate.</p>
+          </div>
+          <div class="cta-col">
+            <a class="btn" href="https://www.amazon.com/Optimum-Nutrition-Micronizada-Monohidrato-Porciones/dp/B002DYIZEO?__mk_es_US=%C3%85M%C3%85%C5%BD%C3%95%C3%91&crid=2Z5XTWAYZ21W&dib=eyJ2IjoiMSJ9.bDY1A9xOn3oifK6hTDlf3gj9rqYOB2v3I42Xr8Z-JH_EfK4AJjqdhtk1yMplrkRJMAcY6s0CBcl38BaYOEKXbWIAoxxZBfQv9a-fsAs41ASLR5TA0gHRZc20cd4Qawj8znEwq_Y85xhKea_J4EOh2C3-0aOx8JzEmztEDxH06kY-HFZMR2xhPeV8c_63NQeHnZWBySyUAJq9a4hEVHO8vEGu0j6tgw2judfTdIiGsqoxT9tQNug50M4au1kR6PlxUQhDlGh9d7G5Xh0aCWKSfmaUmPdN2Sn-9g4WKCBFUaE.R9hZSKyTjU1DozBhHesKmUZD1c7T4rafldPSdQp4pHw&dib_tag=se&keywords=Thorne%2BCreatine&qid=1790515450&rdc=1&s=hpc&sprefix=thorne%2Bcreatine%2Chpc%2C602&sr=1-3-spons&sp_csd=d2lkZ2V0TmFtZT1zcF9hdGY&th=1&linkCode=ll2&tag=radiospy-20&linkId=1c0d4b36e3d20b41abffc83ce519cac5&language=es_US&gaOptInStatus=true&ref_=as_li_ss_tl" target="_blank" rel="noopener sponsored">View on Amazon</a>
+            <span class="btn-note">Amazon Associates link</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="omega3">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>Omega-3 / fish oil</h2>
+        <span class="section-num">03 / 04</span>
+      </div>
+      <p class="section-desc">Look at combined EPA+DHA per serving, not total fish oil milligrams — that's where cheaper brands pad the label.</p>
+
+      <div class="pick">
+        <span class="pick-rank">1</span>
+        <div class="pick-body">
+          <div>
+            <h3 class="pick-name">Nordic Naturals Ultimate Omega</h3>
+            <p class="pick-meta"><span class="stars">★★★★★</span><span class="price">$0.60 / serving</span></p>
+            <p class="best-for">Best for: highest EPA+DHA concentration</p>
+            <p class="pick-desc">1,280mg combined EPA+DHA per two softgels, independently tested for oxidation and heavy metals. Consistently the top choice in third-party purity comparisons.</p>
+          </div>
+          <div class="cta-col">
+            <a class="btn" href="https://www.amazon.com/-/es/Nordic-Naturals-ni%C3%B1os-ponche-bayas/dp/B075882FKG?__mk_es_US=%C3%85M%C3%85%C5%BD%C3%95%C3%91&crid=3MJE9AOEUIMCI&dib=eyJ2IjoiMSJ9.ju0Y5NS9TncTpzYu2rgfN50faeuUhYNXUmLSA00SfqH7za9sjnVzKtfsUot1sKP3lLXKoKYgy-3se2V4JQt6ufFGNNdwI1tH9mUfZmbIOJLaoF88Gwdj2RmJbsEe4QqCHcFk6Mz2UbC8P_AaM0im_DIS3_U73ZOA99q2OkzUEnlW8Sv4NWkUX9hVBGbEeMPew-3v-i-dVuaV5gu6YSkWiNHe4jKrOAqS4HIO1yU65kVtvl-EcW6dLIU0V4QNUxBPqYC-wc-wNOYWPocJPJcX8YRg8X3x6wtWASjM0JQ1-18.tV65hQMaW-qaqI2-dyxKILAJfRPBuQBDz0MxMSxoL2k&dib_tag=se&keywords=Nordic%2BNaturals%2BUltimate%2BOmega&qid=1790515556&s=hpc&sprefix=nordic%2Bnaturals%2Bultimate%2Bomega%2Chpc%2C493&sr=1-1&th=1&linkCode=ll2&tag=radiospy-20&linkId=682b7200efb2024afc07611e119bb325&language=es_US&gaOptInStatus=true&ref_=as_li_ss_tl" target="_blank" rel="noopener sponsored">View on Amazon</a>
+            <span class="btn-note">Amazon Associates link</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="pick">
+        <span class="pick-rank">2</span>
+        <div class="pick-body">
+          <div>
+            <h3 class="pick-name">Nature Made Fish Oil 1200mg</h3>
+            <p class="pick-meta"><span class="stars">★★★★☆</span><span class="price">$0.18 / serving</span></p>
+            <p class="best-for">Best for: budget daily use</p>
+            <p class="pick-desc">USP-verified and widely available, though EPA+DHA content per softgel runs lower than the premium picks — check the label if dose matters to you.</p>
+          </div>
+          <div class="cta-col">
+            <a class="btn" href="https://www.amazon.com/-/es/Nature-Made-Suplementos-pescado-c%C3%A1psulas/dp/B071VT9J98?__mk_es_US=%C3%85M%C3%85%C5%BD%C3%95%C3%91&crid=2X6YTO9A2RYG5&dib=eyJ2IjoiMSJ9.OK0t2sSXe95I2yPU3AGsXx_9h1wra_kiT2TX519cd2zgIHRkRPJtldQe2Dyr0ENLmFQSSwM9p1TVLQ3w3HVk9uHvf-LHWQh5DbJK8C6xeGvjnopIXRwJ7VyPuZsAYqO6KixY2uJVOPPVxiR0BngCdAxqgbJGOXIBzyDEcO-GwzzQ6E1YjDYK9y9iFJe87u3XgzR7lPl1LAXZCcy5L0Dh6Abb6RkNh8SqM1r-N6dVKH12HIVcGAQo1svMT_KYHhVX5ghcPU73ORNKJsmTm9nQ8Y1oJJabo_XpoXFkDq0f6EU.exJf0mlambd0DkYzaOdsivBWZ2CaAkaEqupyI4lr-iE&dib_tag=se&keywords=Nature%2BMade%2BFish%2BOil%2B1200mg&qid=1790515825&rdc=1&s=hpc&sprefix=nature%2Bmade%2Bfish%2Boil%2B1200mg%2Chpc%2C548&sr=1-1&th=1&linkCode=ll2&tag=radiospy-20&linkId=c35153209e3eb12b262f1d71c147eddd&language=es_US&gaOptInStatus=true&ref_=as_li_ss_tl" target="_blank" rel="noopener sponsored">View on Amazon</a>
+            <span class="btn-note">Amazon Associates link</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="pick">
+        <span class="pick-rank">3</span>
+        <div class="pick-body">
+          <div>
+            <h3 class="pick-name">Nordic Naturals Algae Omega</h3>
+            <p class="pick-meta"><span class="stars">★★★★☆</span><span class="price">$0.95 / serving</span></p>
+            <p class="best-for">Best for: vegan / plant-based</p>
+            <p class="pick-desc">Algae-sourced EPA+DHA at a meaningfully higher price than fish oil, for anyone avoiding animal-derived sources.</p>
+          </div>
+          <div class="cta-col">
+            <a class="btn" href="https://www.amazon.com/-/es/Nordic-Naturals-Omega-vegano-plantas/dp/B081QQ7PRP?__mk_es_US=%C3%85M%C3%85%C5%BD%C3%95%C3%91&crid=18TZ7BCAVXPDF&dib=eyJ2IjoiMSJ9.E79lLQAei_pcE_ExmsEjRh5K_y6YPKZuVAtCAXXjQhXhx_FgqDVvlt-50WDlzZuRIQXfGlNOyL6SnWRJNk1Ab5Lt98cWwpfLV16WeffgsmUUSb2PxRGuZvYN0aYZEnDYxB6lCgWuQI6pVNXScxxmFZmd4oU9ClbvHXi2Qv9_s18kbEIcuhYwvq8XFDMBRPKwseSk9iZpP0dXrInJMsMt0ivQ4hS7ut7iJC6gv8PsgJNN9nOPqmg-5rInJBEtuY8fzA3T4MG6sFpXcOpNKVxpVME8r7pcf6JGmeXmeOB7R_Q.pY9rPzQGEEDhMnAgASpoT0W9MXez4L1uqsuLaVefDcc&dib_tag=se&keywords=Nordic%2BNaturals%2BAlgae%2BOmega&qid=1790515948&s=hpc&sprefix=nordic%2Bnaturals%2Balgae%2Bomega%2Chpc%2C594&sr=1-1&th=1&linkCode=ll2&tag=radiospy-20&linkId=72f995afb28cc24c908269e637806b4d&language=es_US&gaOptInStatus=true&ref_=as_li_ss_tl" target="_blank" rel="noopener sponsored">View on Amazon</a>
+            <span class="btn-note">Amazon Associates link</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="vitamins">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>Multivitamins</h2>
+        <span class="section-num">04 / 04</span>
+      </div>
+      <p class="section-desc">A multivitamin should cover the gaps in a normal diet, not replace it — we favor moderate, food-form doses over megadoses.</p>
+
+      <div class="pick">
+        <span class="pick-rank">1</span>
+        <div class="pick-body">
+          <div>
+            <h3 class="pick-name">Ritual Essential for Women/Men Multivitamin</h3>
+            <p class="pick-meta"><span class="stars">★★★★☆</span><span class="price">$1.30 / day</span></p>
+            <p class="best-for">Best for: traceable, minimal-filler formulation</p>
+            <p class="pick-desc">Nine key nutrients in bioavailable forms, with a published supply chain per ingredient. Delayed-release capsule is easier on an empty stomach than most competitors.</p>
+          </div>
+          <div class="cta-col">
+            <a class="btn" href="https://www.amazon.com/Ritual-Multivitam%C3%ADnico-para-mujeres-porciones/dp/B09W376TNJ?__mk_es_US=%C3%85M%C3%85%C5%BD%C3%95%C3%91&crid=22D7IVEO87R8N&dib=eyJ2IjoiMSJ9.XoU5BY6XtgcGhO_kGHwzzIzPXKuCPWF_1J-53ILsT2CJhXqsm5HK_LSHhZcDn4BS-1F_g425FuYQ2TTmWdQEOsmOo3ntakvcoT5mmOGzy2XiczXnx5gtI_PpAoQXV9WZb4NrxiSOPeUHjgZN79_na4pPq5ihLiDfXPIbjzhTz7XTzmmspM4aUVoUO5_3qL8meEotxJuSPDUTrNxY1oDcmmIFF1BCplPcah4FPvM4uFcZZShq89qRbVu48-9bWZkENe-YD71Yqo6l6x59MikWcsVhzZY1iLVdnybPfPSAo98.4kJgQHfi-mBcANaF8rxi0ECXuGFEyJXNUZiE3UjPf4A&dib_tag=se&keywords=Ritual+Essential+for+Women%2FMen+Multivitamin&qid=1790516387&s=hpc&sprefix=ritual+essential+for+women%2Fmen+multivitamin%2Chpc%2C389&sr=1-2-spons&sp_csd=d2lkZ2V0TmFtZT1zcF9hdGY&psc=1&linkCode=ll2&tag=radiospy-20&linkId=c46891436622155fe0db25eaab0eb842&language=es_US&gaOptInStatus=true&ref_=as_li_ss_tl" target="_blank" rel="noopener sponsored">View on Amazon</a>
+            <span class="btn-note">Amazon Associates link</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="pick">
+        <span class="pick-rank">2</span>
+        <div class="pick-body">
+          <div>
+            <h3 class="pick-name">Centrum Silver Adults 50+</h3>
+            <p class="pick-meta"><span class="stars">★★★★☆</span><span class="price">$0.15 / day</span></p>
+            <p class="best-for">Best for: budget, broad coverage</p>
+            <p class="pick-desc">Widely studied formulation adjusted for nutrient needs after 50 — the lowest cost per day on this list by a wide margin.</p>
+          </div>
+          <div class="cta-col">
+            <a class="btn" href="https://www.amazon.com/-/es/Centrum-Multivitam%C3%ADnico-plateado-adultos-cognici%C3%B3n/dp/B09KCHLVS8?__mk_es_US=%C3%85M%C3%85%C5%BD%C3%95%C3%91&crid=3CND1YRHKJGHI&dib=eyJ2IjoiMSJ9.wAoFEUw-62-yOMv2uNRIdcTjM_1_rKF1oU72l1ApeLYSCTSpODJIw-nIRwjgDolNSr6tjBtEbvRSzs1Ph5cD9M16ghEeIptIwlreMpzuw1_NOqRfRUjDF6hmcpFp30p5GlNhNajfDjm3Ck166F62SheeK_k5gVKxv66UrfnboZK7YYuYGskpKhzJa8QmRrR-7lmlrId566fH4Y2AyTnD1OKwQlXqZadwqZKKk4CcUysVEuo1cN6LYrx6w-DiM5DOTCf6r7sfFdi1ZogRMuL7upOxzPbt1ISIK-E5DQxhYyc._fAXWeP4aNxy3cma1WvBfgy_N6X_qE8IsD8yUsrq2W4&dib_tag=se&keywords=Centrum%2BSilver%2BAdults%2B50%2B&qid=1790516465&s=hpc&sprefix=centrum%2Bsilver%2Badults%2B50%2B%2Chpc%2C493&sr=1-4&th=1&linkCode=ll2&tag=radiospy-20&linkId=f64337a43e804b457be659b5bae8dc53&language=es_US&gaOptInStatus=true&ref_=as_li_ss_tl" target="_blank" rel="noopener sponsored">View on Amazon</a>
+            <span class="btn-note">Amazon Associates link</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="guide">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>Quick dosing guide</h2>
+      </div>
+      <div class="guide-grid">
+        <dl class="qa">
+          <dt>Protein</dt>
+          <dd>Most people need 1.6–2.2g per kg of bodyweight daily from all food sources combined — a shake fills the gap food doesn't cover, it isn't a replacement for meals.</dd>
+          <dt>Creatine</dt>
+          <dd>3–5g per day, taken consistently, works as well as a "loading phase." Timing relative to workouts doesn't meaningfully change results.</dd>
+        </dl>
+        <dl class="qa">
+          <dt>Omega-3</dt>
+          <dd>Look for 1,000mg+ combined EPA+DHA per day if you're not eating fatty fish twice a week. Take with a meal that has some fat in it to help absorption.</dd>
+          <dt>Multivitamins</dt>
+          <dd>A multivitamin covers gaps, not deficiencies — if you suspect a specific deficiency (iron, D, B12), a blood test and a targeted supplement beat a multivitamin.</dd>
+        </dl>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="faq" style="border-bottom:none;">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>Before you buy</h2>
+      </div>
+      <div class="disclosure">
+        <strong>Affiliate disclosure.</strong> The Stack Report is a participant in the Amazon Services LLC Associates Program, an affiliate advertising program designed to provide a means for sites to earn advertising fees by linking to Amazon.com. As an Amazon Associate, this site earns from qualifying purchases — this comes at no additional cost to you.
+        <br><br>
+        This page is for informational purposes and does not constitute medical advice. Talk to a healthcare provider before starting any new supplement, especially if you take medication or have an existing condition. These statements have not been evaluated by the FDA; these products are not intended to diagnose, treat, cure, or prevent any disease.
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <span class="foot-brand">The Stack Report</span>
+      <div class="foot-links">
+        <a href="#protein">Protein</a>
+        <a href="#creatine">Creatine</a>
+        <a href="#omega3">Omega-3</a>
+        <a href="#vitamins">Vitamins</a>
+      </div>
+    </div>
+    <p class="foot-copy">© 2026 The Stack Report. Independent reviews, updated regularly. Prices and availability are set by Amazon and may change.</p>
+  </div>
+</footer>
+
+</body>
+</html>
